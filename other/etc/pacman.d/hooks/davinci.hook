@@ -1,0 +1,10 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = davinci-resolve
+
+[Action]
+Description = Telling DaVinci Resolve to use progl...
+When = PostTransaction
+Exec = /usr/bin/sed -i 's+Exec=/opt/resolve/bin/resolve %u+Exec=progl /opt/resolve/bin/resolve %u+g' /home/mikko/.local/share/applications/com.blackmagicdesign.resolve.desktop
